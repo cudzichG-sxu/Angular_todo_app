@@ -2,8 +2,7 @@
   <header>
     <b>Add an item to your todo list</b>
   </header>
-  <div class="row">
-    <div class="col">
+    <div>
       <form id="formActual">
 <!--        template reference variable-->
         <input #inputActual>
@@ -14,7 +13,7 @@
       <header>
         <b>Your list is here! Go get'em tiger!</b>
       </header>
-      <div class="col">
+      <div>
         <div *ngFor="let item of listActual">
           <ul>
             <li>{{item}}</li>
@@ -22,5 +21,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>

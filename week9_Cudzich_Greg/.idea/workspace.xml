@@ -11,9 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="524db286-03f1-48b6-ae3e-925c1604bde8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cudzich-todo/httpserver.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cudzich-todo/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cudzich-todo/schemaFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudzich-todo/front-end/src/app/todo/todo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cudzich-todo/front-end/src/app/todo/todo.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603649484291</updated>
-      <workItem from="1603649485346" duration="8887000" />
+      <workItem from="1603649485346" duration="9192000" />
     </task>
     <servers />
   </component>
