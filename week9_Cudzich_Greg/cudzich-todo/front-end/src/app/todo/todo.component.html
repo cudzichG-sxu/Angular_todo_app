@@ -1,0 +1,26 @@
+<div class="container" style="padding-top: 200px; padding-left: 200px">
+  <header>
+    <b>Add an item to your todo list</b>
+  </header>
+  <div class="row">
+    <div class="col">
+      <form id="formActual">
+<!--        template reference variable-->
+        <input #inputActual>
+        <button (click)="addListItem(inputActual.value)" type="button">Save item to TODO List</button>
+      </form>
+    </div>
+    <div class="container" style="padding-top: 50px">
+      <header>
+        <b>Your list is here! Go get'em tiger!</b>
+      </header>
+      <div class="col">
+        <div *ngFor="let item of listActual">
+          <ul>
+            <li>{{item}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
