@@ -11,7 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="524db286-03f1-48b6-ae3e-925c1604bde8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cudzich-todo/front-end/src/app/todo/todo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/cudzich-todo/front-end/src/app/todo/todo.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudzich-todo/front-end/src/app/todo/todo.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cudzich-todo/front-end/src/app/todo/todo.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +51,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603649484291</updated>
-      <workItem from="1603649485346" duration="9192000" />
+      <workItem from="1603649485346" duration="9251000" />
+      <workItem from="1603660140762" duration="897000" />
+      <workItem from="1603755677904" duration="290000" />
     </task>
     <servers />
   </component>
@@ -67,28 +70,29 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1603649551982">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1603649551982" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1603650439347">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1603659520350">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1603650439347" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1603650439347">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1603659520350" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1603659520349">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1603650439347" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1603650439346">
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1603659520349" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1603659520349">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1603650439346" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1603650439347">
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1603659520349" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1603659520350">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1603650439347" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1603659520350" />
     <state x="976" y="59" width="585" height="801" key="find.popup" timestamp="1603650708986">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

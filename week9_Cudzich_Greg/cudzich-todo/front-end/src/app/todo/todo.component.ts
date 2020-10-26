@@ -9,8 +9,8 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 export class TodoComponent {
   //Found this to clear the input field when the button is clicked for cleaner UI
   @ViewChild('inputActual') inputActual: ElementRef
-  listActual = []
-  addListItem(item: String) {
+  listActual = ["I need to sleep", "I need to eat", "I need to read about Swift UI"]
+  addListItem(item: string) {
     if(item != ""){
       this.listActual.push(item)
       this.inputActual.nativeElement.value = ''
