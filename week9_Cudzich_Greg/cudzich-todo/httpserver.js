@@ -7,16 +7,17 @@ var modelActual = mongoose.model('modelActual', schema);
 const milliTimestamp = new Date().getTime();
 
 mongoose.connection.once('open', function() {
-    //needed to add app.use(express.json()) for request.body to be populated, was returning empty before
-    // I guess body-parser is now inbuilt with express.js.
     app.use(express.json());
     app.post('/listItemActual', function(request, res) {
-        var savePkg = request.body;
-        if (savePkg.message === '') {
+        var savePkg = request;
+        //needed to parse through the body and the JSON object to get to the actual value of the payload
+        //achieved by using savePkg.body.listItem
+        console.log(savePkg.body.listItem);
+        if (savePkg.body.listItem === undefined) {
             console.log("THE DATA IS EMPTY!");
         } else {
             var newItem = new modelActual({
-                listItem: savePkg.message,
+                listItem: savePkg.body.listItem,
                 timestamp: milliTimestamp
             });
             newItem.save(function (err, doc) {
@@ -27,7 +28,7 @@ mongoose.connection.once('open', function() {
                 } else {
                     console.log("saved successfully to database " + doc);
                     res.status(200);
-                    res.send(JSON.stringify({}));
+                    res.send(JSON.stringify(doc));
                 }
             });
         }
@@ -65,7 +66,7 @@ mongoose.connection.once('open', function() {
         })
     });
 
-    app.use(express.static('./public'));
+    app.use(express.static('front-end/dist/front-end/'));
     app.listen(8080, (err) => {
         if(err) {
             console.log(err);

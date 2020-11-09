@@ -1,4 +1,5 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TodoListService } from "../_services/todo-list.service";
 
 @Component({
   selector: 'todo',
@@ -6,16 +7,22 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 
-export class TodoComponent {
-  //Found this to clear the input field when the button is clicked for cleaner UI
-  @ViewChild('inputActual') inputActual: ElementRef
-  listActual = ["I need to sleep", "I need to eat", "I need to read about Swift UI"]
-  addListItem(item: string) {
-    if(item != ""){
-      this.listActual.push(item)
-      this.inputActual.nativeElement.value = ''
-    }
+export class TodoComponent implements OnInit {
+  public newListItems;
+  public returnedListItems;
+
+  constructor(private todoListService: TodoListService) {
+  }
+
+  ngOnInit(): void {
+    this.todoListService.getAllListItems().subscribe(returnListItems => {
+      this.returnedListItems = returnListItems;
+    })
+  }
+
+  saveItem(): void {
+    this.todoListService.create(this.newListItems).subscribe(savedListItem => {
+      this.returnedListItems.push(savedListItem);
+    })
   }
 }
-// red line over here saying TS1128: Declaration or statement expected.
-//Not sure what this mean? Everything compiles just fine.
