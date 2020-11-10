@@ -5,6 +5,8 @@ mongoose.connect('mongodb://localhost/users');
 var schema = require('./schemaFile.js').schemaActual;
 var modelActual = mongoose.model('modelActual', schema);
 const milliTimestamp = new Date().getTime();
+//utilized for fixing CANNOT GET route
+const history = require('connect-history-api-fallback');
 
 mongoose.connection.once('open', function() {
     app.use(express.json());
@@ -48,8 +50,8 @@ mongoose.connection.once('open', function() {
         });
     });
 
-    app.use('/', express.query());
-    app.delete("/", function(request, response) {
+    app.use('/deleteItem', express.query());
+    app.delete('/deleteItem', function(request, response) {
        var deletePkg = modelActual.deleteOne({_id: request.query.id});
        console.log(request.query);
         deletePkg.exec(function(err) {
@@ -66,7 +68,18 @@ mongoose.connection.once('open', function() {
         })
     });
 
+    //Begin block of code that fixes error of CANNOT GET route
     app.use(express.static('front-end/dist/front-end/'));
+    app.use(history({
+        disableDotRule: true,
+        verbose: true
+    }));
+    app.use(express.static('front-end/dist/front-end/'));
+    app.get('/', function(req, res) {
+        res.render(path.join(__dirname + '/dist/index.html'));
+    });
+    //end block of code that fixes error of CANNOT GET route
+
     app.listen(8080, (err) => {
         if(err) {
             console.log(err);

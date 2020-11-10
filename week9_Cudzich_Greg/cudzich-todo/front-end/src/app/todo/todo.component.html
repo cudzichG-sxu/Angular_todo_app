@@ -10,9 +10,11 @@
       <header>
         <b>Your list is here! Go get'em tiger!</b>
       </header>
-      <div *ngFor="let item of returnedListItems">
+      <div *ngFor="let item of returnedListItems; let itemIndex = index">
         <ul>
-          <li>{{item.listItem}}</li>
+          <li>{{item.listItem}}
+            <button type='button' class='btn btn-danger btn-sm delete' (click)="deleteItem(item._id, itemIndex)">Delete</button>
+          </li>
         </ul>
       </div>
     </div>
