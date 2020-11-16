@@ -24,4 +24,8 @@ export class TodoListService {
     //if there's suppose to be something in options I'd like to know
     return this.httpClient.delete<any>(`${environment.apiUrl}/deleteItem/?id=${itemToBeDeleted}`, {})
   }
+
+  update( idActual, listItem ): Observable<any> {
+   return this.httpClient.put<any>(`${environment.apiUrl}/updateItem/?id=${idActual}`, {listItem: listItem})
+  }
 }

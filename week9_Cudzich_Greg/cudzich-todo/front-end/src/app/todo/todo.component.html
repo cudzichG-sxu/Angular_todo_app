@@ -14,6 +14,46 @@
         <ul>
           <li>{{item.listItem}}
             <button type='button' class='btn btn-danger btn-sm delete' (click)="deleteItem(item._id, itemIndex)">Delete</button>
+            <ng-template #content let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title"
+                    id="modal-basic-title">
+                  Update your list item
+                </h4>
+                <button type="button" class="close"
+                        aria-label="Close" (click)=
+                          "modal.dismiss('Cross click')">
+
+            <span aria-hidden="true">
+                ×
+            </span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="updateItem">
+                      Item
+                    </label>
+                    <div class="input-group">
+                      <input #itemToUpdateWith id="updateItem" class="form-control" placeholder="{{item.listItem}}">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-outline-dark"
+                        (click)="updateItem(item._id, itemToUpdateWith.value); modal.close('Save click')">
+                  Save
+                </button>
+              </div>
+            </ng-template>
+
+            <button class="btn btn-lg btn-outline-primary"
+                    (click)="open(content)">
+              Edit
+            </button>
           </li>
         </ul>
       </div>

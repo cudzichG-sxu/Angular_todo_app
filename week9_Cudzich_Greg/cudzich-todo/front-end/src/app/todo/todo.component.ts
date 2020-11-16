@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { TodoListService } from "../_services/todo-list.service";
-
+import {NgbModal, ModalDismissReasons}
+  from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'todo',
   templateUrl: './todo.component.html',
@@ -10,10 +11,9 @@ import { TodoListService } from "../_services/todo-list.service";
 export class TodoComponent implements OnInit {
   public newListItems;
   public returnedListItems;
-
-  constructor(private todoListService: TodoListService) {
+  closeResult = '';
+  constructor(private todoListService: TodoListService, private modalService: NgbModal) {
   }
-
   ngOnInit(): void {
     this.todoListService.getAllListItems().subscribe(returnListItems => {
       this.returnedListItems = returnListItems;
@@ -37,5 +37,32 @@ export class TodoComponent implements OnInit {
         this.returnedListItems.splice(index, 1);
       }
     })
+  }
+
+  updateItem(idActual, updatedValue): void {
+    this.todoListService.update(idActual, updatedValue).subscribe(updatedItem => {
+      this.todoListService.getAllListItems().subscribe(returnListItems => {
+        this.returnedListItems = returnListItems;
+      })
+    })
+  }
+  open(content) {
+    this.modalService.open(content,
+      {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult =
+        `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }

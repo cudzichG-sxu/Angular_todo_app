@@ -68,6 +68,21 @@ mongoose.connection.once('open', function() {
         })
     });
 
+    app.use(express.json());
+    app.put('/updateItem', function(request, response) {
+        var updatePkg = modelActual.updateOne({_id: request.query.id},{$set: { "listItem":request.body.listItem}});
+        updatePkg.exec(function(err) {
+            if(err) {
+                console.log("error updating item in database" + err);
+                response.status(404);
+                response.send(JSON.stringify(err));
+            } else {
+                response.status(200);
+                response.send(JSON.stringify({}));
+            }
+        })
+    });
+
     //Begin block of code that fixes error of CANNOT GET route
     app.use(express.static('front-end/dist/front-end/'));
     app.use(history({
